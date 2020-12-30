@@ -1,0 +1,13 @@
+table {
+  width: 100%;
+}
+
+.mat-table{
+  width: 90%;
+  margin: auto auto auto auto;
+}
+
+.headder{
+  font-weight: bold;
+  font-size: medium;
+}

@@ -1,0 +1,66 @@
+
+<body>
+    <div class="container">
+        <button (click)='InsertionSort()' class='sort-btn'>Decending Order</button>
+        <button (click)='sortingDecendingOrder()' class='sort-btn'>Assending Order</button>
+
+    </div>
+
+    <div class='search-field'>
+      <form class="form" #f="ngForm" (ngSubmit)="onSubmit(f)">
+	      <input class="search-bar" type="search" name="search" ngModel placeholder="Search" aria-label="Search">
+	      <button class="search-btn" type="submit">Search</button>
+      </form>
+    </div>
+
+    <table mat-table [dataSource]="dataSource" class="mat-table">
+
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- Club ID Column -->
+  <ng-container matColumnDef="clubId">
+    <th mat-header-cell *matHeaderCellDef class='headder'> Club ID </th>
+    <td mat-cell *matCellDef="let element"> {{element.clubId}} </td>
+  </ng-container>
+
+  <!-- Club Name Column -->
+  <ng-container matColumnDef="clubName">
+    <th mat-header-cell *matHeaderCellDef class='headder'> Club Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.clubName}} </td>
+  </ng-container>
+
+  <!-- Played Match Count Column -->
+  <ng-container matColumnDef="playedMatchCount">
+    <th mat-header-cell *matHeaderCellDef class='headder'> Played </th>
+    <td mat-cell *matCellDef="let element"> {{element.playedMatchCount}} </td>
+  </ng-container>
+
+  <!-- Wins Column -->
+  <ng-container matColumnDef="wins">
+    <th mat-header-cell *matHeaderCellDef class='headder'> Wins </th>
+    <td mat-cell *matCellDef="let element"> {{element.wins}} </td>
+  </ng-container>
+
+    <!-- draws Column -->
+  <ng-container matColumnDef="draws">
+    <th mat-header-cell *matHeaderCellDef class='headder'> draws </th>
+    <td mat-cell *matCellDef="let element"> {{element.draws}} </td>
+  </ng-container>
+
+  <!-- Loss Column -->
+  <ng-container matColumnDef="losses">
+    <th mat-header-cell *matHeaderCellDef class='headder'> Losses </th>
+    <td mat-cell *matCellDef="let element"> {{element.losses}} </td>
+  </ng-container>
+
+
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+</table>
+
+
+
+</body>
